@@ -1,7 +1,6 @@
 PREVIEW :
 
-
-
+![alt text](https://github.com/aashish-bidap/Real-Time-Twitter-Analysis-Dashboard/blob/master/Preview-Dashboard-SS.png)
 
 Download Google Word Embedding:<br>
 !wget -c "https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz"
