@@ -103,9 +103,9 @@ def prediction(prediction):
     for i in prediction:
         for j in i:
             if j > 0.5:
-                return 1
+                return "Positive"
             else:
-                return 0
+                return "Negative"
 
 def get_twitter_data():
 
