@@ -1,4 +1,11 @@
-PREVIEW :
+**REAL TIME TWITTER DATA ANALYSIS USING KAFKA - ELASTICSEARCH - KIBANA PIPELINE ON DOCKER**
+
+1. Tweet Sentiment 
+    - Trained a 2 Dense Layer Neural Network Classifier
+2. Analyzing Trending User Mentions & Hashtags
+3. Analyzing Most Retweeted Tweets 
+
+Preview :
 
 ![alt text](https://github.com/aashish-bidap/Real-Time-Twitter-Analysis-Dashboard/blob/master/Preview-Dashboard-SS.png)
 
