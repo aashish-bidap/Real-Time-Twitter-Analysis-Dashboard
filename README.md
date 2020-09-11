@@ -1,5 +1,6 @@
-**REAL TIME TWITTER DATA ANALYSIS USING KAFKA - ELASTICSEARCH - KIBANA PIPELINE ON DOCKER**
+# **REAL TIME TWITTER DATA ANALYSIS PIPELINE ON DOCKER**
 
+## NLP | Real Time Streaming ETL | Kafka | ElasticSearch | Kibana | Docker | 
 1. Tweet Sentiment Classification
     - Trained a 2 Dense Layer Neural Network Classifier
 2. Analyzing Trending User Mentions & Hashtags
