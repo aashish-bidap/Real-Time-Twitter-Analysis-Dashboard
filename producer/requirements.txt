@@ -1,0 +1,8 @@
+kafka-python
+tweepy
+python-twitter
+tensorflow
+gensim
+pandas
+numpy == 1.16.0
+sklearn

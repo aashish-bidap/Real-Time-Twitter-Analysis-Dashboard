@@ -1,0 +1,88 @@
+version: "3"
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT : 2181
+      ZOOKEEPER_TICK_TIME : 2000
+
+  broker:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker:9092
+      #KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      #KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.6.3
+    depends_on:
+      - zookeeper
+      - broker
+      - connect
+    ports:
+      - "9200:9200"
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - cluster.routing.allocation.disk.threshold_enabled=false
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+
+  connect:
+    image: confluentinc/cp-kafka-connect:3.3.0
+    ports:
+      - "8083:8083"
+    depends_on:
+      - zookeeper
+      - broker
+    volumes:
+      - $PWD/connect-plugins:/connect-plugins
+    environment:
+      CONNECT_BOOTSTRAP_SERVERS: broker:9092
+      CONNECT_REST_PORT: 8083
+      CONNECT_GROUP_ID: "connect"
+      CONNECT_REST_LISTENERS: http://0.0.0.0:8083
+      CONNECT_CONFIG_STORAGE_TOPIC: connect-config
+      CONNECT_OFFSET_STORAGE_TOPIC: connect-offsets
+      CONNECT_STATUS_STORAGE_TOPIC: connect-status
+      CONNECT_REPLICATION_FACTOR: 1
+      CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: 1
+      CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: 1
+      CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: 1
+      CONNECT_KEY_CONVERTER: "org.apache.kafka.connect.storage.StringConverter"
+      CONNECT_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_VALUE_CONVERTER_SCHEMAS_ENABLE: "false"
+      CONNECT_INTERNAL_KEY_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_INTERNAL_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_PRODUCER_INTERCEPTOR_CLASSES: "io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor"
+      CONNECT_CONSUMER_INTERCEPTOR_CLASSES: "io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor"
+      CONNECT_REST_ADVERTISED_HOST_NAME: "connect"
+      CONNECT_ZOOKEEPER_CONNECT: zookeeper:2181
+      CONNECT_PLUGIN_PATH: /connect-plugins
+      CONNECT_LOG4J_ROOT_LOGLEVEL: INFO
+      CONNECT_LOG4J_LOGGERS: org.reflections=ERROR
+      CLASSPATH: /usr/share/java/monitoring-interceptors/monitoring-interceptors-3.3.0.jar
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:5.6.3
+    container_name: kibana
+    environment:
+     - ./kibana.yml:/usr/share/kibana/config/kibana.yml
+    ports:
+     - "5601:5601"
+
+networks:
+  default:  
+    external:
+      name: kafka-network
+

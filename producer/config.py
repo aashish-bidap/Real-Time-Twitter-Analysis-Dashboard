@@ -1,0 +1,5 @@
+access_token = "897468638159962112-ZJ3SnASE9dyqgJfdoAo1GTst4cMr3gu"
+access_token_secret =  "RDyoLaLXYeSfcuh2Z2ptQV6Xew9ob9DKAqmIjkCCkgur6"
+consumer_key =  "m0XpaTv7IKr8zvcWq2P1Z4J0R"
+consumer_secret =  "Q26S6vTujHvjFZXY9jctZgC7vBNcs6HK2VQN78B84rRw1NQ11K"
+SEARCH_TERM = "RepublicTV"
