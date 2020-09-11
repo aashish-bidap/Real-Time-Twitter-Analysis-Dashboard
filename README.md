@@ -7,7 +7,15 @@
 
 Preview :
 
-![alt text](https://github.com/aashish-bidap/Real-Time-Twitter-Analysis-Dashboard/blob/master/Preview-Dashboard-SS.png)
+**DEMO EXECUTION - Click below on the Video** <br>
+<div align="center">
+      <a href="https://youtu.be/wv96_7gRTG8">
+     <img 
+      src="https://img.youtube.com/vi/wv96_7gRTG8/0.jpg" 
+      alt="Dashboard" 
+      style="width:100%;">
+      </a>
+    </div>
 
 Download Google Word Embedding:<br>
 !wget -c "https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz"
