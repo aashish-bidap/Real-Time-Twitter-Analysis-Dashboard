@@ -1,8 +1,14 @@
+PREVIEW :
+
+
+
+
+
 INSTALLATION STEPS :<br>
 
   **Create network:** <br>
     - $ docker network create kafka-network <br>
-  **Spin up the local single-node Kafka cluster (will run in the background):**<br>
+  **Spin up the local single-node cluster (will run in the background):**<br>
     - $ docker-compose -f docker-compose.kafka.yml up -d <br>
   **Check the cluster is up and running (wait for "started" to show up):**<br>
     - $ docker-compose -f docker-compose.kafka.yml logs -f broker | grep "started" <br>
@@ -23,7 +29,6 @@ curl -X POST -H "Content-Type: application/json" -d '
     "name": "elasticsearch-sink"
   }
 }' localhost:8083/connectors
-
 
 **References:**<br>
 1.https://github.com/florimondmanca/kafka-fraud-detector <br>
