@@ -1,6 +1,6 @@
 **REAL TIME TWITTER DATA ANALYSIS USING KAFKA - ELASTICSEARCH - KIBANA PIPELINE ON DOCKER**
 
-1. Tweet Sentiment 
+1. Tweet Sentiment Classification
     - Trained a 2 Dense Layer Neural Network Classifier
 2. Analyzing Trending User Mentions & Hashtags
 3. Analyzing Most Retweeted Tweets 
