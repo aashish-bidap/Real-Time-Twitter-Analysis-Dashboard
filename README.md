@@ -8,7 +8,7 @@
 
 Preview :
 
-**DEMO EXECUTION - Click below on the Video** <br>
+**DEMO EXECUTION FOR A MEDIA CHANNEL- Click below on the Video** <br>
 <div align="center">
       <a href="https://youtu.be/wv96_7gRTG8">
      <img 
