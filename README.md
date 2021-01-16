@@ -1,6 +1,6 @@
 # Title : Real Time Twitter Data Analysis Pipeline
 
-Objective of this project is built a real time streaming data pipeline in order to 
+Objective of this project is to implement a real time streaming data pipeline in order to 
 - Analyse trending User Mentions, Hashtags 
 - Most retweeted Tweets 
 - Sentiment of the Tweets using Twitter data.
