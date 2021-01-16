@@ -1,4 +1,4 @@
-# Title REAL TIME TWITTER DATA ANALYSIS PIPELINE
+# Title : Real Time Twitter Data Analysis Pipeline
 
 Objective of this project is built a real time streaming data pipeline in order to 
 - Analyse trending User Mentions, Hashtags 
@@ -12,7 +12,7 @@ Objective of this project is built a real time streaming data pipeline in order 
 - Sentiment Analysis
 - Neural Networks
 
-# Enviornment
+## Enviornment
 Python (scikitlearn, seaborn, pandas, numpy, matplotlib,Tensorflow,Keras),Jupyter Notebook,Apache Kafka, ElasticSearch , Kibana , Docker ,Twitter API
 
 
@@ -28,7 +28,7 @@ Python (scikitlearn, seaborn, pandas, numpy, matplotlib,Tensorflow,Keras),Jupyte
       </a>
     </div>
 
-# INSTALLATION
+## INSTALLATION
 
 - Download Google Word Embedding:<br>
 !wget -c "https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz"
@@ -58,8 +58,8 @@ curl -X POST -H "Content-Type: application/json" -d '
   }
 }' localhost:8083/connectors
 
-**References:**<br>
-1.https://github.com/florimondmanca/kafka-fraud-detector <br>
-2.https://medium.com/@raymasson/kafka-elasticsearch-connector-fa92a8e3b0bc <br>
-3.https://stackoverflow.com/questions/48711455/how-do-i-create-a-dockerized-elasticsearch-index-using-a-python-script-running <br>
-4.https://github.com/davidefiocco/dockerized-elasticsearch-indexer/blob/master/indexer/indexer.py <br>
+## References:
+1. https://github.com/florimondmanca/kafka-fraud-detector <br>
+2. https://medium.com/@raymasson/kafka-elasticsearch-connector-fa92a8e3b0bc <br>
+3. https://stackoverflow.com/questions/48711455/how-do-i-create-a-dockerized-elasticsearch-index-using-a-python-script-running <br>
+4. https://github.com/davidefiocco/dockerized-elasticsearch-indexer/blob/master/indexer/indexer.py <br>
