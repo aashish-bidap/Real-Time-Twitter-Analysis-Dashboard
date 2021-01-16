@@ -1,28 +1,39 @@
-# **REAL TIME TWITTER DATA ANALYSIS PIPELINE ON DOCKER**
+# Title REAL TIME TWITTER DATA ANALYSIS PIPELINE
 
-## NLP | Real Time Streaming ETL | Kafka | ElasticSearch | Kibana | Docker | 
-1. Tweet Sentiment Classification
-    - Trained a 2 Dense Layer Neural Network Classifier
-2. Analyzing Trending User Mentions & Hashtags
-3. Analyzing Most Retweeted Tweets 
+Objective of this project is built a real time streaming data pipeline in order to 
+- Analyse trending User Mentions, Hashtags 
+- Most retweeted Tweets 
+- Sentiment of the Tweets using Twitter data.
 
-Preview :
+## Technology Used
+- Natural Language Processing 
+- Real Time Streaming ETL 
+- Predictive Modeling
+- Sentiment Analysis
+- Neural Networks
 
-**DEMO EXECUTION TWITTER DATA ANALYSIS FOR A MEDIA CHANNEL- Click below on the Video** <br>
+# Enviornment
+Python (scikitlearn, seaborn, pandas, numpy, matplotlib,Tensorflow,Keras),Jupyter Notebook,Apache Kafka, ElasticSearch , Kibana , Docker ,Twitter API
+
+
+## DEMO EXECUTION:
+
+**TWITTER DATA ANALYSIS FOR A MEDIA CHANNEL- Click below on the Video** <br>
 <div align="center">
       <a href="https://youtu.be/wv96_7gRTG8">
      <img 
       src="https://img.youtube.com/vi/wv96_7gRTG8/0.jpg" 
       alt="Dashboard" 
-      style="width:100%;">
+      style="width:50%;">
       </a>
     </div>
 
-Download Google Word Embedding:<br>
+# INSTALLATION
+
+- Download Google Word Embedding:<br>
 !wget -c "https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz"
 
-INSTALLATION STEPS :<br>
-
+- STEPS :<br>
   **Create network:** <br>
     - $ docker network create kafka-network <br>
   **Spin up the local single-node cluster (will run in the background):**<br>
