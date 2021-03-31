@@ -36,19 +36,19 @@ Python (scikitlearn, seaborn, pandas, numpy, matplotlib,Tensorflow,Keras),Jupyte
 - STEPS :<br>
   **Create network:** <br>
   ```
-    - $ docker network create kafka-network <br>
+    - $ docker network create kafka-network 
   ```
   **Spin up the local single-node cluster (will run in the background):**<br>
   ``` 
-    - $ docker-compose -f docker-compose.kafka.yml up -d <br>
+    - $ docker-compose -f docker-compose.kafka.yml up -d 
   ```
   **Check the cluster is up and running (wait for "started" to show up):**<br>
   ```
-      - $ docker-compose -f docker-compose.kafka.yml logs -f broker | grep "started" <br>
+      - $ docker-compose -f docker-compose.kafka.yml logs -f broker | grep "started" 
   ```
   **Start the transaction generator and the fraud detector (will run in the background):**<br>
   ``` 
-    - $ docker-compose up -d <br>
+    - $ docker-compose up -d
   ```
   **Create connection between Kafka and ElasticSearch:** <br>
 ```
